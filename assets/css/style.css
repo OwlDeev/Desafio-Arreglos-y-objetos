@@ -1,0 +1,151 @@
+.articulo {
+  width: 250px;
+  padding: 10px;
+  background: lightgray;
+  border-radius: 10px;
+}
+
+.grid-container {
+  font-family: "Titan One", cursive;
+  display: grid;
+  grid-gap: 0px;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 576px) and (min-width: 100px) {
+  .grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "sd"
+      "main"
+      "footer";
+    gap: 0px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header header"
+      "sd main"
+      "footer footer";
+    gap: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header header header"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "sd main main"
+      "footer footer footer";
+  }
+}
+
+footer {
+  background-color: #ffa43a;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  color: white;
+  grid-area: header;
+  background-color: #ff9800;
+}
+
+#divHeader {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  background-color: rgb(255, 255, 255);
+  grid-area: main;
+}
+.sidebar {
+  grid-area: sd;
+  max-width: 80%;
+  font-size:30px;
+  background-image: url(/assets/imgs/fondoFiltro.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.divSidebar{
+  width: 80%;
+  height: 70%;
+  background-color: #ff9900c0;
+  color: white;
+  text-shadow: 2px 2px #000000c0;
+}
+
+.footer {
+  color: #ff9800;
+  background-color: #ffff89;
+  grid-area: footer;
+}
+
+#rs{
+  flex-direction:row;
+}
+
+.inputStandar{
+  width: 100px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.iconMargin{
+  margin-left:10px;
+  size:20px;
+}
+
+#tituloHeader {
+  font-size: 3em;
+  margin-left: 20px;
+}
+
+#logoHeader {
+  display: flex;
+  height: 3em;
+}
+
+.marginSmall{
+  margin-top:10px;
+}
+
+.subTitleHeader{
+  color: white;
+  font-size: 1.5em;
+}
+
+#divInputMC{
+  width: 100%;
+  height: 100%;
+}
+
+.divSubSidebar{
+  width: 80%;
+}
+
+#buttonSidebar{
+  color: #ff9800;
+  text-shadow: 3px 3px #000000c0;
+}
