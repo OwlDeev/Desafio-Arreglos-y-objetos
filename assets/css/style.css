@@ -179,7 +179,7 @@ footer {
 
 #imgGalleryProperty{
   max-height: 150px;
-  max-width: 350px;
+  max-width: 400px;
   background-attachment: fixed;
 }
 
@@ -206,4 +206,20 @@ footer {
 
 #buttonViewMore{
   background-color: #ff9800;
+}
+
+#paddingRight{
+  margin-right: 10px;
+}
+
+#paddingLeft{
+  margin-left: 10px;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
 }

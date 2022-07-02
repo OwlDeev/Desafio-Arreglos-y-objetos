@@ -78,9 +78,9 @@ function updatePropiedades() {
   for (let propiedad of propiedades) {
     let metrosSolicitados = Number(inputDesdeMc.value * inputHasta.value);
     if(propiedad.cuartos <= inputCantidadCuartos.value && inputCantidadCuartos.value != 0){
-      if(propiedad.metros <= metrosSolicitados){
+      if((propiedad.metros >= inputDesdeMc.value) && (propiedad.metros <=inputHasta.value)){
         propiedadesUpdate += `
-        <div class="p-3">
+        <div class="p-2">
         <div class="card" id="itemGalleryTablerDesktop">
           <img
             src="assets/imgs/edificio${contador}.png"
@@ -92,11 +92,17 @@ function updatePropiedades() {
             <div class="card-body">
               <h5 class="card-title">${propiedad.nombre}</h5>
               <div class="divDescriptionCard">
-                <p>N° Cuartos: ${propiedad.cuartos}</p>
-                <p>Metros: ${(propiedad.metros)}</p>
+                <div class="flexColumn">
+                  <p>N° Cuartos:</p>
+                  <p id="paddingRight">${propiedad.cuartos}</p>
+                </div>
+                <div class="flexColumn">
+                  <p>Metros: </p>
+                  <p id="paddingLeft">${(propiedad.metros)}</p>
+                </div>
               </div>
               <p class="card-text">${propiedad.descripcion}</p>
-              <a href="#" class="btn" id="buttonViewMore">Ver mas</a>
+              <a href="#" class="btn btn-primary">Ver mas</a>
             </div>
           </center>
         </div>
@@ -143,7 +149,7 @@ console.log('vacio: '+contadorAlertaNull);
     showModal();
   }else if((contadorAlertaNull == true && contadorAlertaCuartos == 0 && contadorAlertaMetros == 0) && (inputCantidadCuartos.value != '0' || inputDesdeMc.value != '0' || inputHasta.value != '0')){
     titleError = 'Error';
-    titleDescription = 'Debe seleccionar los filtros "Desde" y "Hasta"'
+    titleDescription = 'Debe seleccionar al menos 1 cuarto'
     showModal();
   }else if(contadorAlertaNull == true && contadorAlertaCuartos == 0 && contadorAlertaMetros == 0){
     titleError = 'Error';
@@ -170,8 +176,14 @@ linkAllPropiedades.addEventListener("click", function allPropiedades() {
             <div class="card-body">
               <h5 class="card-title">${propiedad.nombre}</h5>
               <div class="divDescriptionCard">
-                <p>N° Cuartos: ${propiedad.cuartos}</p>
-                <p>Metros: ${(propiedad.metros)}</p>
+                <div class="flexColumn">
+                  <p>N° Cuartos:</p>
+                  <p id="paddingRight">${propiedad.cuartos}</p>
+                </div>
+                <div class="flexColumn">
+                  <p>Metros: </p>
+                  <p id="paddingLeft">${(propiedad.metros)}</p>
+                </div>
               </div>
               <p class="card-text">${propiedad.descripcion}</p>
               <a href="#" class="btn btn-primary">Ver mas</a>
