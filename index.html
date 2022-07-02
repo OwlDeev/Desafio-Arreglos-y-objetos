@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
     <link
       rel="stylesheet"
@@ -23,9 +27,12 @@
   <body>
     <div class="grid-container">
       <div class="header">
-        <div class="d-flex align-items-center justify-content-around" id="divHeader">
+        <div
+          class="d-flex align-items-center justify-content-around"
+          id="divHeader"
+        >
           <div id="propiedades">
-            <a class="subTitleHeader" href="">Propiedades</a>
+            <a class="subTitleHeader" id="linkAllPropiedades">Propiedades</a>
           </div>
           <div id="logoHeader">
             <img src="assets/imgs/logo.png" alt="" />
@@ -33,50 +40,118 @@
           </div>
           <div id="arrendar">
             <a class="subTitleHeader" href="">Agregar propiedad</a>
-          </div>          
+          </div>
         </div>
       </div>
 
-      <div class="d-flex align-items-center justify-content-around flex-column sidebar">
-        <div class="d-flex align-items-center justify-content-around flex-column divSidebar rounded-4 border border-white p-2 mb-2 border-opacity-100">
-          <div class="d-flex align-items-center justify-content-around flex-column rounded-4 border border-white p-2 mb-2 border-opacity-100 divSubSidebar">
+      <div
+        class="d-flex align-items-center justify-content-around flex-column sidebar"
+      >
+        <div
+          class="d-flex align-items-center justify-content-around flex-column divSidebar rounded-4 border border-white p-2 mb-2 border-opacity-100"
+        >
+          <div
+            class="d-flex align-items-center justify-content-around flex-column rounded-4 border border-white p-2 mb-2 border-opacity-100 divSubSidebar"
+          >
             <p>Cantidad de cuartos:</p>
-            <input type="number" min="1" class="inputStandar">
+            <input
+              type="number"
+              min="1"
+              class="inputStandar"
+              id="inputCantidadCuartos"
+            />
           </div>
-          <div class="d-flex align-items-center justify-content-around flex-column rounded-4 border border-white p-2 mb-2 border-opacity-100 divSubSidebar">
+          <div
+            class="d-flex align-items-center justify-content-around flex-column rounded-4 border border-white p-2 mb-2 border-opacity-100 divSubSidebar"
+          >
             <p>Metros cuadrados</p>
             <div class="d-flex justify-content-around" id="divInputMC">
               <div class="d-flex flex-column">
                 <p>Desde</p>
-                <input type="number" class="inputStandar">
+                <input type="number" class="inputStandar" id="inputDesdeMc" />
               </div>
               <div class="d-flex align-items-end">
                 <p class="text-center">x</p>
               </div>
               <div>
                 <p>Hasta</p>
-                <input type="number" class="inputStandar">
+                <input type="number" class="inputStandar" id="inputHastaMc" />
               </div>
             </div>
           </div>
-          <button class="rounded-4 divSubSidebar" id="buttonSidebar">Buscar</button>
-        </div>  
+          <button class="rounded-4 divSubSidebar" id="buttonSidebar">
+            Buscar
+          </button>
+        </div>
       </div>
-        
+
       <div class="content">
-        <ul id="dynamic-content"></ul>
-        <section class="articulos"></section>
+        <div id="flexbox">
+          <p>*La busqueda realizada siempre consulta de "igual o menor" a lo ingresado en el filtro*</p>
+          <div id="numeroTotal">
+            <p id="pNumeroTotal"></p>
+          </div>
+          <div class="d-flex flex-wrap" id="propiedadesSection"></div>
+        </div>
       </div>
 
       <div class="d-flex align-items-center justify-content-around footer">
         <div class="d-flex align-items-center" id="rs">
-          <i class="bi bi-facebook iconMargin fs-2"></i>
-          <i class="bi bi-instagram iconMargin fs-2"></i>
-          <i class="bi bi-envelope iconMargin fs-2"></i>
+          <a href="">
+            <i class="bi bi-facebook iconMargin fs-2"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-instagram iconMargin fs-2"></i>
+          </a>
+          <a href="">
+            <i class="bi bi-envelope iconMargin fs-2"></i>
+          </a>
         </div>
-        <p id="derechosReservados">© Derechos Reservados 2022-2023 narkistudio.com</p>
+        <p id="derechosReservados">
+          © Derechos Reservados 2022-2023 narkistudio.com
+        </p>
       </div>
     </div>
-    <!-- <script src="assets/js/script.js"></script> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

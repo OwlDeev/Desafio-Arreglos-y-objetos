@@ -1,10 +1,3 @@
-.articulo {
-  width: 250px;
-  padding: 10px;
-  background: lightgray;
-  border-radius: 10px;
-}
-
 .grid-container {
   font-family: "Titan One", cursive;
   display: grid;
@@ -68,21 +61,31 @@ footer {
   color: white;
   grid-area: header;
   background-color: #ff9800;
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1;
 }
 
 #divHeader {
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
 .content {
   background-color: rgb(255, 255, 255);
   grid-area: main;
+  max-height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  z-index: 0;
 }
+
 .sidebar {
   grid-area: sd;
-  max-width: 80%;
+  width: 600px !important;
   font-size:30px;
-  background-image: url(/assets/imgs/fondoFiltro.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -148,4 +151,59 @@ footer {
 #buttonSidebar{
   color: #ff9800;
   text-shadow: 3px 3px #000000c0;
+}
+
+.divContent{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#cardId{
+  height: 300px;
+  margin:10px;
+}
+
+#flexbox{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px;
+}
+
+#itemGalleryTablerDesktop{
+  width: 100%;
+}
+
+#imgGalleryProperty{
+  max-height: 150px;
+  max-width: 350px;
+  background-attachment: fixed;
+}
+
+.divDescriptionCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#numeroTotal{
+  display: flex;
+  width: 100%;
+  height: 2em;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#pNumeroTotal{
+  color: rgb(0, 0, 0);
+  font-size: 2em;
+}
+
+#buttonViewMore{
+  background-color: #ff9800;
 }
