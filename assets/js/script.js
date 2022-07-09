@@ -80,8 +80,7 @@ function updatePropiedades() {
   for (let propiedad of propiedades) {
     let metrosSolicitados = Number(inputDesdeMc.value * inputHasta.value);
     if (
-      propiedad.cuartos <= inputCantidadCuartos.value &&
-      inputCantidadCuartos.value != 0
+      propiedad.cuartos <= inputCantidadCuartos.value
     ) {
       if (
         propiedad.metros >= inputDesdeMc.value &&
@@ -131,6 +130,7 @@ function updatePropiedades() {
   }
   alertError();
   pNumeroTotal.innerText = "Total encontrado: " + contador;
+  console.log(propiedadesUpdate);
   return propiedadesUpdate;
 }
 
@@ -138,8 +138,6 @@ const buttonSidebar = document.querySelector("#buttonSidebar");
 buttonSidebar.addEventListener("click", function update() {
   if (alertError() == true) {
     propiedadesSection.innerHTML = updatePropiedades();
-  } else {
-    console.log("no pasa por el codigo");
   }
   limpiarFiltro();
 });
@@ -196,10 +194,9 @@ function alertError() {
     titleDescription = 'No puede ser el filtro "Desde" mayor que "Hasta"';
     showModal();
     return false;
+  }else {
+    return true;
   }
-  console.log("cuartos: " + contadorAlertaCuartos);
-  console.log("metros: " + contadorAlertaMetros);
-  console.log("vacio: " + contadorAlertaNull);
 }
 
 //MOSTRAR TODAS LAS PROPIEDADES
